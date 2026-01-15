@@ -57,6 +57,34 @@ cards3D.forEach(card => {
     });
 });
 
+// --- COPIAR DESDE AQUÍ ---
+
+// Efecto 3D interactivo para el Logo Circular de WebYa
+const logoContainer = document.querySelector('.glass-element.circle-logo');
+const logoImg = document.querySelector('.hero-logo');
+
+if (logoContainer && logoImg) {
+    logoContainer.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = logoContainer.getBoundingClientRect();
+        
+        // Calculamos la posición del ratón respecto al centro del logo
+        const x = (e.clientX - left - width / 2) / 10;
+        const y = (e.clientY - top - height / 2) / 10;
+
+        // Aplicamos la rotación al contenedor y un ligero desplazamiento a la imagen interior (parallax)
+        logoContainer.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) translateY(-10px)`;
+        logoImg.style.transform = `scale(1.1) translateX(${-x}px) translateY(${y}px)`;
+    });
+
+    logoContainer.addEventListener('mouseleave', () => {
+        // Al salir, vuelve a la posición de la animación CSS "floatingLogo"
+        logoContainer.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+        logoImg.style.transform = `scale(1) translateX(0) translateY(0)`;
+    });
+}
+
+// --- HASTA AQUÍ ---
+
 // NUEVO: Smooth Scroll para navegación interna
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
