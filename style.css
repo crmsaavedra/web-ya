@@ -168,3 +168,53 @@ nav ul li a { text-decoration: none; color: var(--dark); font-weight: 700; font-
     .hero-btns { justify-content: center; }
     .big-link.email-responsive { -webkit-text-stroke: 0; color: var(--primary); font-size: 1.5rem; }
 }
+
+/* Estilos específicos del formulario */
+.contact-form-container {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.form-options {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-main i {
+    margin-right: 8px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}

@@ -72,3 +72,32 @@ document.querySelectorAll('nav a').forEach(anchor => {
         }
     });
 });
+
+// Manejo del Formulario de WhatsApp
+const whatsappForm = document.getElementById('whatsapp-form');
+
+if (whatsappForm) {
+    whatsappForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita que la página se recargue
+
+        // 1. Obtener valores de los campos
+        const nombre = document.getElementById('form-name').value;
+        const servicio = document.getElementById('form-service').value;
+        const mensaje = document.getElementById('form-message').value;
+        
+        // 2. Tu número de teléfono (sin el +)
+        const telefono = "56934191842"; 
+
+        // 3. Crear el mensaje codificado para URL
+        const textoChat = `Hola WebYa! Mi nombre es *${nombre}*.%0AEstoy interesado en: *${servicio}*.%0A%0AMensaje: ${mensaje}`;
+
+        // 4. Abrir WhatsApp en una nueva pestaña
+        const url = `https://wa.me/${telefono}?text=${textoChat}`;
+        window.open(url, '_blank');
+        
+        // 5. Opcional: Limpiar el formulario
+        whatsappForm.reset();
+    });
+}
+
+// Mantener el resto de tus animaciones de scroll y cursor que ya teníamos...
