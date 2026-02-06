@@ -1,0 +1,61 @@
+DOCUMENTACIÓN DE FUNCIONALIDADES - APP EVENTOS / TECHSTORE
+
+1. PLATAFORMA PÚBLICA (CLIENTE)
+   - Catálogo de Eventos/Productos: Visualización de productos o eventos disponibles en la página de inicio.
+   - Detalle de Producto: Página individual con información detallada (`/event/:id`).
+   - Búsqueda Avanzada: Buscador integrado mediante API (`/api/search`).
+   - Sistema de Reseñas: Los usuarios autenticados pueden dejar comentarios y valoraciones (`/event/:id/review`).
+   - Carrito de Compras:
+     - Persistencia del carrito (`/api/cart/save`).
+     - Cotizador de envíos integrado (`/api/shipping-quote`).
+   - Publicaciones/Noticias: Sección de contenido tipo blog (`/publication/:id`).
+
+2. GESTIÓN DE USUARIO
+   - Autenticación:
+     - Registro e Inicio de sesión normal (Email/Contraseña).
+     - Integración con Google (Passport google-oauth20).
+   - Perfil de Usuario: Visualización y edición de datos personales (`/profile`).
+   - Wishlist (Lista de Deseos): Guardar productos favoritos (`/wishlist`, `/api/save-wishlist`).
+   - Historial de Pedidos:
+     - Ver lista de pedidos realizados.
+     - Detalle de cada pedido.
+     - Descarga de facturas/comprobantes en PDF (`/order/:id/download`).
+
+3. PANEL DE ADMINISTRACIÓN (BACKOFFICE)
+   - Dashboard General: Visualización de estadísticas clave en tiempo real.
+   - Gestión de Inventario (CRUD):
+     - Crear, Editar, Eliminar productos/eventos.
+     - Carga de múltiples imágenes (hasta 5 por producto).
+   - Gestión de Publicaciones:
+     - Crear y administrar noticias o posts.
+     - Carga de imágenes para publicaciones (hasta 10).
+   - Gestión de Pedidos:
+     - Listado completo de transacciones (`/orders`).
+     - Actualización de estados de pedido.
+   - Auditoría y Logs: Registro de actividades del sistema (`/logs`) para seguridad y control.
+   - Reportes: Descarga de reportes de ventas en Excel/PDF (`/report/sales`).
+   - Escáner de Tickets: Herramienta de validación QR para control de acceso (`/scanner`).
+
+4. PAGOS Y FACTURACIÓN
+   - Pasarela de Pago: Integración nativa con Mercado Pago.
+   - Cupones de Descuento: Sistema de validación de códigos promocionales (`/validate_coupon`).
+   - Manejo de Estados: Gestión automática de pagos exitosos, pendientes y fallidos.
+
+5. CONFIGURACIÓN Y PERSONALIZACIÓN (SITE SETTINGS)
+   Permite al administrador modificar la apariencia y credenciales sin tocar código:
+   - Identidad Visual: Nombre del sitio, Logo, Favicon.
+   - Paleta de Colores: Configuración de color primario, secundario, fondo y textos (incluyendo Modo Oscuro).
+   - Contacto y Redes: Actualización de email, teléfono, dirección y links a redes sociales.
+   - Integraciones: Campos para ingresar credenciales de Mercado Pago y SMTP (Email) desde el panel.
+   - Barra de Anuncios: Activar/desactivar banner superior con mensajes promocionales.
+   - SEO Básico: Edición de descripción del sitio y palabras clave (keywords).
+
+6. SEGURIDAD Y MANTENIMIENTO
+   - Respaldos (Backups):
+     - Listado de copias de seguridad de la base de datos.
+     - Generación manual de backups (`/api/backup/run`).
+     - Descarga directa de archivos de respaldo.
+   - Protección:
+     - Rate Limiting (Protección contra fuerza bruta).
+     - Sanitación de datos (Mongo Sanitize, XSS Clean).
+     - Headers de seguridad (Helmet).

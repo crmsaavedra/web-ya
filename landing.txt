@@ -1,0 +1,77 @@
+================================================================================
+                    WEBYA STUDIO - LISTADO DE FUNCIONALIDADES
+================================================================================
+
+Este documento detalla todas las funcionalidades, interacciones y características 
+técnicas implementadas en la landing page de WebYa Studio.
+
+I. EXPERIENCIA DE USUARIO (UX) Y NAVEGACIÓN
+--------------------------------------------------------------------------------
+1. Preloader Personalizado (Pantalla de Carga):
+   - Al cargar el sitio, se muestra una animación con el logo "WEBYA" y una barra de progreso.
+   - Desaparece suavemente una vez que todo el contenido ha cargado.
+   - Bloquea el scroll hasta terminar la carga para asegurar una primera impresión limpia.
+
+2. Cursor Personalizado (Solo Desktop):
+   - Reemplaza el puntero nativo con un diseño de doble elemento: un punto central y un seguidor (follower).
+   - El seguidor tiene un movimiento suavizado (smooth) para una sensación de fluidez extrema.
+   - Se desactiva automáticamente en dispositivos móviles/táctiles para no obstruir.
+
+3. Navegación Suave (Smooth Scroll):
+   - Al hacer clic en los enlaces del menú (Servicios, Proceso, etc.), el sitio se desliza suavemente hasta la sección correspondiente en lugar de saltar bruscamente.
+
+4. Barra de Navegación Inteligente (Sticky Navbar):
+   - Al hacer scroll hacia abajo, el menú superior cambia su apariencia (fondo/transparencia) para mejorar la legibilidad del contenido mientras se mantiene accesible.
+
+II. DISEÑO VISUAL Y ANIMACIONES (INTERACTIVIDAD)
+--------------------------------------------------------------------------------
+1. Efecto 3D en Tarjetas (Tilt Effect):
+   - Las tarjetas de "Fundadores" y "Servicios" reaccionan al movimiento del mouse.
+   - Se inclinan en perspectiva 3D siguiendo la posición del cursor, creando una sensación de profundidad.
+   - Vuelven a su posición original suavemente al retirar el mouse.
+
+2. Logo Hero Interactivo (Parallax):
+   - El logo circular en la sección principal (Hero) sigue al mouse con un efecto de paralaje.
+   - El contenedor y la imagen interna se mueven en capas separadas para dar profundidad 3D.
+   - Incluye animación de brillo (shimmer) y flotación constante.
+
+3. Animaciones "Reveal" al Scroll:
+   - Los elementos (títulos, textos, tarjetas) aparecen progresivamente a medida que el usuario baja por la página.
+   - Efecto de desvanecimiento y movimiento ascendente para una entrada elegante.
+
+4. Ticker Infinito (Marquesina):
+   - Una banda de texto en movimiento continuo que muestra palabras clave (Web Design, Branding, UI/UX, etc.) de forma horizontal infinita.
+
+III. SECCIONES Y CONTENIDO
+--------------------------------------------------------------------------------
+1. Sección Hero (Inicio):
+   - Títulos impactantes con badges.
+   - Botones de llamada a la acción (CTA) claros para ver proyectos o el proceso.
+
+2. Servicios y Proceso:
+   - Grilla de servicios con iconos.
+   - Línea de tiempo del proceso de trabajo (Concepto -> Diseño -> Código) numerada.
+
+3. Métricas y Equipo:
+   - Contadores de estadísticas (+10 Proyectos, 100% Dedicación).
+   - Tarjetas de presentación de los fundadores con enlaces a redes sociales (LinkedIn, GitHub, Instagram).
+
+4. Preguntas Frecuentes (FAQ):
+   - Sistema de acordeón interactivo (details/summary).
+   - Permite desplegar y ocultar respuestas para mantener la limpieza visual.
+
+IV. CONTACTO Y FORMULARIOS
+--------------------------------------------------------------------------------
+1. Formulario Inteligente de WhatsApp:
+   - Campos para Nombre, Servicio y Mensaje.
+   - No requiere backend tradicional: procesa los datos y genera automáticamente un enlace de WhatsApp Web/App.
+   - Al enviar, abre directamente el chat con un mensaje pre-formateado y estructurado listo para enviar.
+   
+2. Botón Flotante de WhatsApp:
+   - Acceso directo a contacto en la esquina inferior derecha, siempre visible.
+
+V. ASPECTOS TÉCNICOS
+--------------------------------------------------------------------------------
+- Diseño Responsivo: Adaptado para móviles, tablets y escritorio.
+- Stack Tecnológico: HTML5, CSS3 Moderno (Variables, Flexbox, Grid) y JavaScript Vanilla (sin dependencias pesadas).
+- Optimización: Uso de `requestAnimationFrame` en animaciones para mantener 60fps.

@@ -1,0 +1,73 @@
+================================================================================
+                    STREETFOOD OS - LISTADO DETALLADO DE FUNCIONALIDADES
+================================================================================
+
+StreetFood OS es una plataforma SaaS diseñada para que vendedores de comida 
+callejera, food trucks y pequeños restaurantes puedan gestionar su menú digital,
+personalizar su marca y recibir pedidos de forma eficiente con una estética V2 Premium.
+
+I. PANEL DE ADMINISTRACIÓN (PARA EL VENDEDOR) V2 PREMIUM
+--------------------------------------------------------------------------------
+1. Dashboard y Analíticas Real-time:
+   - Resumen de ventas totales, número de pedidos y ticket promedio.
+   - Gráficos interactivos de rendimiento semanal.
+   - Panel de control intuitivo con estados actualizados al instante.
+
+2. Gestión del Catálogo de Productos y Aditamentos:
+   - CRUD Completo de Productos: Interfaz de rejilla moderna con búsqueda y filtros.
+   - Categorización Dinámica: Organización de productos con soporte para imágenes.
+   - Workbench de Complementos: Creación avanzada de extras y combos de up-selling.
+   - **Control de Inventario Inteligente**: 
+     - Seguimiento de stock por producto.
+     - Deducción atómica al recibir pedidos para evitar overselling.
+     - Desactivación automática de disponibilidad al agotar existencias.
+
+3. Editor de Diseño Visual (Cinematic Store Builder):
+   - Workspace de Diseño: Entorno oscuro cinematográfico con previsualización real.
+   - Configuración de Tema Global: Control sobre el color primario, fondo y contraste.
+   - Tipografía de Alta Gama: Uso de Google Fonts premium (Inter, Outfit).
+   - Constructor de Capas: Gestión modular del Navbar, Hero, Menú y Footer.
+
+4. Gestión de Mesas y Salón (Nuevo):
+   - **Mapeador de Sectores**: Creación de múltiples zonas (Terraza, Salón, Barra).
+   - **Editor de Layout**: Herramientas para dibujar paredes, puertas y ventanas.
+   - **Mesas Interactivas**: Arrastrar, rotar y posicionar mesas en un lienzo infinito.
+   - **QR por Mesa**: Generación de códigos específicos para pedidos directos.
+
+5. Control Financiero y Fidelización (Nuevo):
+   - **Corte de Caja**: Registro de efectivo contado vs esperado con cálculo de diferencias.
+   - **Sistema de Fidelización (Loyalty Card)**: 
+     - Tarjeta de sellos digital (6-10 pedidos = 1 premio).
+     - Acumulación automática de puntos tras cada compra exitosa.
+     - Notificación de premios disponibles para el cliente.
+
+6. Operaciones de Cocina (KDS - Kitchen Display System):
+   - Pantalla de Cocina Real-time: Gestión táctil y estados (Pendiente -> Preparando -> Listo).
+   - Cronómetros Visuales: Alertas de tiempo por colores para evitar demoras.
+   - **Impresión Térmica**: Conexión vía Bluetooth para impresión de comandas físicas.
+
+II. EXPERIENCIA DEL CLIENTE (MENÚ PÚBLICO)
+--------------------------------------------------------------------------------
+1. Interfaz de Menú Dinámica V2:
+   - Rendimiento optimizado para móviles y navegación táctil fluida.
+   - **IA de Predicción de Espera**: Cálculo dinámico del tiempo de entrega basado en carga real.
+
+2. Personalización y Checkout:
+   - Modales Premium para variantes e ingredientes (ej. "Sin Cebolla").
+   - **Checkout de Marca**: Interfaz sin distracciones con el logo y colores del comercio.
+   - Soporte para pedidos en mesa (identificación de mesa por QR o manual).
+
+3. Seguimiento de Pedido en Vivo:
+   - Live Tracking con barra de progreso animada.
+   - Botón de WhatsApp integrado para enviar detalle de orden directamente al vendedor.
+
+III. NÚCLEO TÉCNICO Y CAPACIDADES PWA
+--------------------------------------------------------------------------------
+- **PWA (Progressive Web App)**: Instalable en dispositivos móviles con soporte Offline.
+- **Hardware**: Integración nativa con impresoras térmicas ESC/POS vía Web Bluetooth.
+- **Base de Datos**: MongoDB + Supabase (Realtime) para máxima consistencia y velocidad.
+- **Framework**: Next.js 15 + React 19 (App Router).
+
+================================================================================
+Actualizado por Antigravity AI - StreetFood OS Development Team
+================================================================================

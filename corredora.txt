@@ -1,0 +1,62 @@
+# Documentación de Funcionalidades de la Aplicación Web
+
+Este documento detalla todas las funcionalidades actuales del sistema, basado en el análisis del código fuente.
+
+## 1. Módulo Público (Frontend)
+Accesible para cualquier visitante sin necesidad de iniciar sesión.
+
+### Vistas Principales
+- **Inicio Estático (Landing Page):** Vista principal con información general (`/`).
+- **Catálogo de Propiedades:**
+  - Listado de propiedades disponibles.
+  - Filtros (implícito en el diseño, datos disponibles en modelo: tipo, operación, región, precio).
+- **Detalle de Propiedad (`/propiedad/:id`):** 
+  - Muestra información completa: fotos, descripción, precio, ubicación, contacto.
+  - Características específicas: Baños, habitaciones, tipo de acuerdo.
+- **Perfiles Públicos:**
+  - Perfil de Usuario (`/perfil/usuario/:UserId`).
+  - Perfil de Equipo (`/perfil/equipo/:TeamId`).
+- **Páginas Informativas:**
+  - Personas (`/personas`).
+  - Equipos (`/equipos`).
+
+## 2. Módulo de Administración (Backend)
+Requiere autenticación con rol de ADMINISTRADOR.
+
+### Gestión de Acceso
+- **Login de Administrador:** Autenticación segura mediante correo y contraseña.
+- **Registro de Administradores:** Permite crear nuevas cuentas administrativas (protegido por middleware de sesión).
+- **Protección de Rutas:** Middleware `checkSession` e `isAdmin` que bloquea accesos no autorizados.
+
+### Gestión de Propiedades (CRUD)
+El panel de administración (`/admin/panel`) permite gestionar el inventario inmobiliario:
+
+- **Crear Propiedad:**
+  - Formulario completo con validación.
+  - Carga de imágenes (soporte base64 convertido a archivos físicos).
+  - Asignación de ubicación usando división territorial de Chile (Región, Provincia, Comuna).
+  - Definición de precios en distintas monedas (CLP, UF, USD).
+- **Editar Propiedad:**
+  - Modificación de todos los campos de la propiedad.
+  - Actualización de detalles (baños, habitaciones, estado).
+- **Eliminar Propiedad:**
+  - Borrado lógico de la base de datos.
+  - **Limpieza Automática:** Elimina físicamente las imágenes asociadas del servidor para ahorrar espacio.
+- **Visualización:** Listado tabular de todas las propiedades cargadas.
+
+## 3. Características Técnicas y de Base de Datos
+
+### Base de Datos (MongoDB)
+- **Modelo `Propiedades`:** 
+  - Almacena info comercial (precio, tipo moneda).
+  - Detalles físicos (baños, habitaciones, ubicación geográfica).
+  - URLs de imágenes.
+- **Modelo `User/Admin`:** 
+  - Sistema de roles (`ADMIN`, etc.).
+  - Contraseñas encriptadas con `bcrypt`.
+
+### Integraciones y Librerías Detectadas
+- **Manejo de Imágenes:** Sistema propio de guardado en `static/propiedades`.
+- **Geografía:** Integración con JSON de `divisionTerritorialChile` para selectores de regiones/comunas.
+- **WhatsApp Integration:** (Librería `whatsapp-web.js` detectada en dependencias) - *Potencialmente usado para notificaciones o contacto automatizado, aunque no verificado en controladores de rutas principales.*
+- **Seguridad:** `Passport.js` para manejo de sesiones y estrategias de login.

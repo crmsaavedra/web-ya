@@ -1,0 +1,75 @@
+LISTADO COMPLETO DE FUNCIONALIDADES DE LA WEB
+
+=== 1. FUNCIONALIDADES DE LA TIENDA (PÚBLICO / CLIENTE) ===
+
+A. NAVEGACIÓN Y BÚSQUEDA
+- Catálogo Completo: Vista principal con listado de productos.
+- Filtros Avanzados: Filtrado por Categoría, Rango de Precios (Mín/Máx) y Marca.
+- Ordenamiento: Ordenar productos por Precio (Ascendente/Descendente) o Novedad (Más recientes).
+- Buscador en Tiempo Real: Búsqueda predictiva (AJAX) que muestra resultados mientras escribes.
+- Detalle de Producto: Vista individual con imágenes, descripción, precio, stock y selección de variantes.
+- Variantes de Producto: Soporte para seleccionar tallas, colores u otras opciones específicas.
+
+B. CARRITO Y COMPRA
+- Carrito de Compras: Agregar/Quitar productos, ajustar cantidades.
+- Cálculo de Envío: Cotización automática basada en la Ciudad del cliente y el Peso total de los productos.
+- Cupones de Descuento: Validación de códigos promocionales (por porcentaje, con vencimiento).
+- Wishlist (Lista de Deseos): Guardar productos para comprar después.
+- Pasarela de Pago: Integración completa con MercadoPago (WebPay, Tarjetas, etc.).
+- Compras como Invitado o Usuario Registrado.
+
+C. CUENTA DE USUARIO
+- Registro e Inicio de Sesión: Sistema seguro de autenticación.
+- Perfil de Usuario: Gestión de datos personales (Dirección, Ciudad para envíos).
+- Historial de Pedidos: Visualización de compras anteriores y su estado.
+- Reseñas Verificadas: Sistema que permite opinar y calificar productos SOLO si el usuario ha comprado el ítem (Validación "Verified Purchase").
+
+D. NOTIFICACIONES Y DOCUMENTOS
+- Correos Automáticos: Confirmación de compra enviada por email.
+- Generación de Boleta/Factura: Creación automática de PDF con el detalle de la compra, adjunto al correo.
+
+=== 2. PANEL DE ADMINISTRACIÓN (BACKOFFICE) ===
+
+A. DASHBOARD GENERAL
+- Resumen de métricas clave.
+- Gráficos de Ventas: Visualización de ingresos (últimos 7 días).
+- Top Productos: Listado de los artículos más vendidos.
+
+B. GESTIÓN DE PRODUCTOS
+- CRUD Completo: Crear, Leer, Actualizar y Eliminar productos.
+- Gestión de Stock: Control de inventario general o por variantes.
+- Soporte de Imágenes Múltiples: Subida y gestión de galería de fotos por producto.
+- Gestión de Variantes: Configuración dinámica de SKU y Stock para cada combinación (ej: Talla M / Rojo).
+
+C. GESTIÓN DE PEDIDOS
+- Listado de Órdenes: Vista de todos los pedidos recibidos.
+- Cambio de Estado: Actualizar estado (Pendiente, Pagado, Enviado, Entregado, etc.).
+- Reportes Excel: Exportación de reporte de ventas mensual a formato .xlsx.
+- Logs de Auditoría: Registro de quién modificó qué pedido y cuándo.
+
+D. GESTIÓN DE USUARIOS
+- Listado de Usuarios Registrados.
+- Sistema de Baneo: Bloquear/Desbloquear acceso a usuarios problemáticos.
+
+E. GESTIÓN DE CUPONES
+- Crear nuevos cupones con código, % de descuento y fecha de expiración.
+- Listar y eliminar cupones existentes.
+
+F. CONFIGURACIÓN DEL SITIO (CMS INTEGRADO)
+- Personalización Visual: Cambiar colores principales, secundarios, fondos y textos desde el panel.
+- Datos de Contacto: Editar email, teléfono, dirección y redes sociales visibles en el footer.
+- SEO: Configurar descripción y palabras clave del sitio.
+- Integraciones: Actualizar Credenciales de API (MercadoPago, Nodemailer) sin tocar código.
+- Barra de Anuncios: Activar/Desactivar y personalizar mensaje superior (ej: "Envío gratis...").
+
+G. SISTEMA / MANTENIMIENTO
+- Logs de Actividad: Registro detallado de acciones administrativas (Login, Backups, Cambios de Configuración).
+- Backups: Generación manual de respaldos de la base de datos (JSON) y descarga directa desde el panel.
+
+=== 3. TECNOLOGÍAS Y CARACTERÍSTICAS TÉCNICAS ===
+- Backend: Node.js + Express.
+- Base de Datos: MongoDB (Mongoose).
+- Frontend: EJS (Templates) + JavaScript Vanilla (Interactividad).
+- Seguridad: Hasheo de contraseñas (Bcrypt), Sesiones seguras, Protección de rutas.
+- Tiempo Real: Socket.io para notificaciones de nuevas ventas al admin.
+- Tareas Programadas: Cron jobs (posible uso para limpieza o reportes).
